@@ -15,7 +15,7 @@ contract ERC20 {
         symbol = "KVA";
         decimals = 18;
         owner = msg.sender;
-        _mint(1000000);
+        mint(5000000);
     }
 
     event Transfer(address indexed from, address indexed to, uint value);
@@ -82,7 +82,7 @@ contract ERC20 {
         return true;
     }
 
-    function _mint(uint _amount) internal {
+    function mint(uint _amount) internal {
         require(
             msg.sender == owner,
             "You are not authorized to perform mint action"
