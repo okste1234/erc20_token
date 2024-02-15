@@ -93,10 +93,10 @@ contract ERC20 {
     }
 
     function burn(uint _charges) private {
-        require(_charges > 0, "cannot burn nothing");
+        require(_charges > 0, "nothing to burn");
         require(
             balances[msg.sender] >= _charges,
-            "You do not have enough tokens to burn"
+            "balance is low to continue transaction"
         );
         balances[msg.sender] -= _charges;
         totalTokenSupply -= _charges;
